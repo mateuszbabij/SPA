@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="icons/css/all.css">
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <title>SPA - Czuły Roman</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fa-solid fa-spa" href="#home"> Czuly Roman</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#home" class="nav-link fa-solid fa-house"></a>
+            </li>
+            <li class="nav-item">
+              <a href="#oferta" class="nav-link">Oferta</a>
+            </li>
+            <li class="nav-item">
+              <a href="#galeria" class="nav-link">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a href="#koszyk" class="nav-link">Koszyk</a>
+            </li>
+            <li class="nav-item dropdown ">
+                <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown">Więcej</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#kontakt">Kontakt</a></li>
+                    <li><a class="dropdown-item" href="#onas">O nas</a></li>
+                    <li><a class="dropdown-item" href="#regulamin">Regulamin</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <script src="scripts/script.js"></script>
-</body>
+  </body>
 </html>
