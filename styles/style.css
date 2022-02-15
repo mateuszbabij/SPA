@@ -1,3 +1,10 @@
 .navbar-collapse {
-    padding-right: 10px;
+  padding-right: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+
+.navbar-brand {
+  font-family: 'Syne Tactile', cursive;
+  font-size: 1.2REM;
 }
