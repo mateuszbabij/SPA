@@ -1,10 +1,41 @@
-.navbar-collapse {
-  padding-right: 10px;
+* {
+  box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap");
 
 .navbar-brand {
-  font-family: 'Syne Tactile', cursive;
-  font-size: 1.2REM;
+  font-family: "Syne Tactile", cursive;
+  font-size: 1.2rem;
+}
+.container-fluid {
+  padding: 0px;
+}
+
+.fa-spa {
+  margin: 0 0.5rem;
+}
+
+.fa-house{
+  color: white;
+  text-decoration: none;
+  margin-right: 0.2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-family: "Syne Tactile", cursive;
+  font-size: 1.2rem;
+}
+
+.nav-item{
+  margin: auto;
+}
+
+.dropdown-menu {
+  min-width: 7rem;
+}
+
+.dropdown-item {
+  width: 100px;
 }
