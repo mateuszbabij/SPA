@@ -13,7 +13,7 @@
       "name": "Pokój binarny",
       "beds": 1,
       "guests": 2,
-      "price": 240
+      "price": 240,
     },
     {
       "id": 3,
@@ -34,51 +34,65 @@
     {
       "id": 1,
       "name": "Masaż rozgrzanym monitorem",
-      "area": "back",
+      "area": "Plecy",
       "time": 30,
-      "price": 80
+      "price": 80,
+      "image": "treatment1",
+      "desc": "Poczuj przyjemny dotyk w rozdzielczości 4k. Szeroki wybór tapet pozwala w pełni rozkoszować się gorącą atmosferą. Dla tradycjonalistów możliowść zmiany monitora na kineskopowy."
     },
     {
       "id": 2,
       "name": "Biczowanie kablem od myszy",
-      "area": "back",
+      "area": "Plecy",
       "time": 20,
-      "price": 70
+      "price": 70,
+      "image": "treatment2",
+      "desc": "Dla osób szukających mocniejszych wrażeń oferujemy biczowanie kablem w metalowym oplocie. Dla mniej doświadczonych Junior Deweloperów biczowanie myszą bezprzewodową."
     },
     {
       "id": 3,
       "name": "Peeling odłamkami płyty CD",
-      "area": "face",
+      "area": "Twarz",
       "time": 15,
-      "price": 50
+      "price": 50,
+      "image": "treatment3",
+      "desc": "Jeśli twoja twarz jest czerwona od ciągłego przeszukiwania StackOverflow, zdecyduj się na przyjemną bryzę z odłamków płyt CD z Windows Vista."
     },
     {
       "id": 4,
       "name": "Pedicure woskiem z USB",
-      "area": "legs",
+      "area": "Nogi",
       "time": 25,
-      "price": 100
+      "price": 100,
+      "image": "treatment4",
+      "desc": "Jeśli znudziło Ci się noszenie skarpetek w sandałach, wypróbuj nasz zabieg pedicure z użyciem ciepłego wosku prosto z USB. Istnieje możliwość przyniesienia własnego pendriva."
     },
     {
       "id": 5,
       "name": "Manicure analogowo-cyfrowy",
-      "area": "hands",
+      "area": "Dłonie",
       "time": 45,
-      "price": 150
+      "price": 150,
+      "image": "treatment5",
+      "desc": "Jeśli Twoje paznokcie nie pozwalają Ci już na szybkie wklepywanie kodu, z pewnością zainteresuje Cię zabieg manicure, do wyboru wersja analogowa (szlifierka) oraz cyfrowa (laser)."
     },
     {
       "id": 6,
       "name": "Kąpiel w gorącej kawie",
-      "area": "body",
+      "area": "Całe ciało",
       "time": 60,
-      "price": 200
+      "price": 200,
+      "image": "treatment6",
+      "desc": "Chcesz mieć energię na cały kolejny miesiąc? Jeśli tak, nie czekaj!! Wskocz do naszej wanny pełnej gorącej kawy. Dla stałych klientów, możliwość zmiany fusiary na cappucino."
     },
     {
       "id": 7,
       "name": "Depilacja dyskiem twardym",
-      "area": "body",
+      "area": "Całe ciało",
       "time": 45,
-      "price": 120
+      "price": 120,
+      "image": "treatment7",
+      "desc": "Czas pracy zdalnej się skończył, czas wracać do biura. Na tę okazję oferujemy wyjątkową depilację dyskiem. Gwarantujemy bezpieczeństwo, wszystkie nasze dyski zostały przeskanowane antywirusowo."
     }
   ]
 }
