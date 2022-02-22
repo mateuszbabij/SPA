@@ -4,6 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap");
 
+body {
+  height: 5000px; /* Used to enable scrolling */
+  background: linear-gradient(180deg, #072c0d 0%, #384233 51%, #e3ebee 85%);
+}
+
 .navbar-brand {
   font-family: "Syne Tactile", cursive;
   font-size: 1.2rem;
