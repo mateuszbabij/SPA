@@ -9,7 +9,7 @@ const cards = function (data, i) {
   $(".row").append(
     `<div class="col">
         <div class="card h-100" >
-                <img src="../images/${data[i].image}.jpg" class="card-img-top" alt="..."/>
+                <img src="images/${data[i].image}.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body d-grid">
                         <h5 class="card-title">${data[i].name}</h5>
                         <p class="card-text"><br>${data[i].desc}</p>
