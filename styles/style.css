@@ -32,13 +32,6 @@
   margin: auto;
 }
 
-.dropdown-menu {
-  min-width: 7rem;
-}
-
-.dropdown-item {
-  width: 100px;
-}
 
 #przyciskDiv {
   margin: auto;
@@ -64,6 +57,10 @@
 #oferta{
   top: 70%;
 }
+
+/* .card-text{
+  height: 9rem;
+} */
 
 /* Background for dropdown menu for smaller screens */
 @media only screen and (max-width:576px){
