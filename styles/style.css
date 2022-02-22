@@ -64,3 +64,14 @@
 #oferta{
   top: 70%;
 }
+
+/* Background for dropdown menu for smaller screens */
+@media only screen and (max-width:576px){
+.collapse-bg{
+ background-color: rgba(158, 170, 173, 0.8);
+  width:30%;
+  margin: auto;
+border-radius: 1rem;
+}
+}
+/* end */
