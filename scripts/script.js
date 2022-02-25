@@ -19,7 +19,7 @@ const cards = function (data, i) {
                             <li class="list-group-item"> <i class="fa-solid fa-dollar-sign"></i> Cena: ${data[i].price}zł</li>
                           </ul>
                           <br>
-                        <a href="#" class="btn btn-primary">Dodaj do koszyka</a>
+                        <a href="#" id="btn_${[i]}" class="btn btn-primary">Dodaj do koszyka</a>
                 </div>
         </div>
   </div>`
@@ -37,3 +37,17 @@ const database = fetch("database.json")
   })
   .catch((err) => console.warn(err));
 //koniec pobierania
+
+// function modal(){
+//   $("body").append(`<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="z-index:2000">
+//   <div class="card position-relative" style="width: 18rem; top:5%; z-index:2000;">
+//   <div class="card-body">
+//     <h5 class="card-title">Card title</h5>
+//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>`)
+// };
+
+
+// $(".btn").on("click",modal())
