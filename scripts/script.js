@@ -19,7 +19,9 @@ const cards = function (data, i) {
                             <li class="list-group-item"> <i class="fa-solid fa-dollar-sign"></i> Cena: ${data[i].price}zł</li>
                           </ul>
                           <br>
-                        <a href="#" class="btn btn-primary">Dodaj do koszyka</a>
+                        <button id="btn_${[i]}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="z-index: 90000;">
+        Dodaj do Koszyka
+      </button>
                 </div>
         </div>
   </div>`
@@ -37,3 +39,8 @@ const database = fetch("database.json")
   })
   .catch((err) => console.warn(err));
 //koniec pobierania
+
+// Data Picker Initialization
+$(document).ready(function () {
+  $('#datepicker').datepicker();
+});
