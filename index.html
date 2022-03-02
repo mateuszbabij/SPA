@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="icons/css/all.css" />
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <title>SPA - Czuły Roman</title>
   </head>
@@ -69,9 +70,7 @@
       href="#oferta"
       id="oferta"
       class="container-fluid position-absolute">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="z-index: 90000;">
-        Launch static backdrop modal
-      </button>
+
       <div class="container-fluid">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 m-0">
           
@@ -80,7 +79,7 @@
       </div>
     </section>
     <section class="container-fluid">
-      <!-- Button trigger modal -->
+
 
       
       <!-- Modal -->
@@ -92,16 +91,25 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              ...
+              <div class="input-group date" id="datepicker">
+                <input type="text" class="form-control">
+                <span class="input-group-append">
+                <span class="input-group-text bg-white d-block">
+                <i class="fa fa-calendar"></i>
+                </span>
+                </span>
+            </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Understood</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+              <button type="button" class="btn btn-primary">Zatwierdź</button>
             </div>
           </div>
         </div>
       </div>
+      
           </section>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
