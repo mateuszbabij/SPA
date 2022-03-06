@@ -43,7 +43,7 @@ const cards = function (data) {
 //wstawianie listy do wybierania pokoi & gosci, do modala
 const rooms = function () {
   $(".modal-body").append(
-    `<select class="form-select form-select1" aria-label="Default select example">
+    `<select id="gosc" class="form-select form-select1" aria-label="Default select example">
     <option selected>Liczba gości</option>
     </select>
     <br>
@@ -54,9 +54,12 @@ const rooms = function () {
 
 //dodawanie pokoi modala
 const roomsid = function (data) {
+  const selected = $("#gosc option:selected()").text();
+  console.log(selected);
   for (let i = 0; i < data.length; i++) {
-    $("#akordeon").append(
-      `<div class="accordion-item">
+    if (data[i].guests >= Number(selected)) {
+      $("#akordeon").append(
+        `<div class="accordion-item">
     <h2 class="accordion-header" id="${"heading" + (i + 1)}">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="${
         "#collapse" + (i + 1)
@@ -69,14 +72,17 @@ const roomsid = function (data) {
     <div id="${
       "collapse" + (i + 1)
     }" class="accordion-collapse collapse" aria-labelledby="${
-        "heading" + (i + 1)
-      }" data-bs-parent="#accordionExample">
+          "heading" + (i + 1)
+        }" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <strong>Opis pokoju.</strong> 
       </div>
     </div>
   </div>`
-    );
+      );
+    } else {
+      continue;
+    }
   }
 };
 
@@ -103,9 +109,7 @@ const database1 = fetch("database.json")
 const database2 = fetch("database.json")
   .then((result) => result.json())
   .then(function (data) {
-    console.log(data.rooms);
     rooms();
-    roomsid(data.rooms);
     roomsguest(data.rooms);
   })
   .catch((err) => console.warn(err));
@@ -116,10 +120,13 @@ $(document).ready(function () {
   $("#datepicker").datepicker();
 });
 
-function wybranyPokoj() {
-  return console.log($("#pokoj :selected").text());
-}
-
-function wybraniGoscie() {
-  return console.log($("#goscie :selected").text());
-}
+//dodawanie pokoi po wybraniu ilosci gosci
+$(document).one("change", "#gosc", function () {
+  fetch("database.json")
+    .then((result) => result.json())
+    .then(function (data) {
+      console.log(data.rooms);
+      roomsid(data.rooms);
+    })
+    .catch((err) => console.warn(err));
+});
