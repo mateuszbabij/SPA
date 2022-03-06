@@ -1,46 +1,125 @@
 //background for dropdown menu
-$("#navbarButton").on("click",function(){
-        $("#drop-bg").toggleClass("collapse-bg")
+$("#navbarButton").on("click", function () {
+  $("#drop-bg").toggleClass("collapse-bg");
 });
 //end
 
 //wstawianie zabiegu do html
-const cards = function (data, i) {
-  $(".row").append(
-    `<div class="col">
+const cards = function (data) {
+  for (let i = 0; i < data.length; i++) {
+    $(".row").append(
+      `<div class="col">
         <div class="card h-100" >
-                <img src="images/${data[i].image}.jpg" class="card-img-top" alt="..."/>
+                <img src="images/${
+                  data[i].image
+                }.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body d-grid">
                         <h5 class="card-title">${data[i].name}</h5>
                         <p class="card-text"><br>${data[i].desc}</p>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item"> <i class="fa-solid fa-hands"></i> Część ciała: ${data[i].area}</li>
-                            <li class="list-group-item"> <i class="fa-solid fa-stopwatch"></i> Czas trwania: ${data[i].time} min</li>
-                            <li class="list-group-item"> <i class="fa-solid fa-dollar-sign"></i> Cena: ${data[i].price}zł</li>
+                            <li class="list-group-item"> <i class="fa-solid fa-hands"></i> Część ciała: ${
+                              data[i].area
+                            }</li>
+                            <li class="list-group-item"> <i class="fa-solid fa-stopwatch"></i> Czas trwania: ${
+                              data[i].time
+                            } min</li>
+                            <li class="list-group-item"> <i class="fa-solid fa-dollar-sign"></i> Cena: ${
+                              data[i].price
+                            }zł</li>
                           </ul>
                           <br>
-                        <button id="btn_${[i]}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="z-index: 90000;">
-        Dodaj do Koszyka
+                        <button id="btn_${[
+                          i,
+                        ]}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+        Zarezerwuj
       </button>
                 </div>
         </div>
   </div>`
+    );
+  }
+};
+
+//wstawianie listy do wybierania pokoi & gosci, do modala
+const rooms = function () {
+  $(".modal-body").append(
+    `<select class="form-select form-select1" aria-label="Default select example">
+    <option selected>Liczba gości</option>
+    </select>
+    <br>
+        <div id="akordeon" class="accordion" id="accordionExample">
+    </div>`
   );
 };
 
+//dodawanie pokoi modala
+const roomsid = function (data) {
+  for (let i = 0; i < data.length; i++) {
+    $("#akordeon").append(
+      `<div class="accordion-item">
+    <h2 class="accordion-header" id="${"heading" + (i + 1)}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="${
+        "#collapse" + (i + 1)
+      }"   aria-expanded="false" aria-controls="${"collapse" + (i + 1)}">
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> ${
+        data[i].name
+      }
+      </button>
+    </h2>
+    <div id="${
+      "collapse" + (i + 1)
+    }" class="accordion-collapse collapse" aria-labelledby="${
+        "heading" + (i + 1)
+      }" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Opis pokoju.</strong> 
+      </div>
+    </div>
+  </div>`
+    );
+  }
+};
+
+//dodawanie ilosci gosci do listy
+const roomsguest = function (data) {
+  for (let i = 0; i < data.length; i++) {
+    $(".form-select1").append(
+      `<option value="${i + 1}">${data[i].guests}</option>`
+    );
+  }
+};
+
 //pobieranie zabiegow z JSONa
-const database = fetch("database.json")
+const database1 = fetch("database.json")
   .then((result) => result.json())
   .then(function (data) {
     console.log(data.treatments);
-    for (let i = 0; i < data.treatments.length; i++) {
-      cards(data.treatments, i);
-    }
+    cards(data.treatments);
+  })
+  .catch((err) => console.warn(err));
+//koniec pobierania
+
+//pobieranie pokoi z JSONa
+const database2 = fetch("database.json")
+  .then((result) => result.json())
+  .then(function (data) {
+    console.log(data.rooms);
+    rooms();
+    roomsid(data.rooms);
+    roomsguest(data.rooms);
   })
   .catch((err) => console.warn(err));
 //koniec pobierania
 
 // Data Picker Initialization
 $(document).ready(function () {
-  $('#datepicker').datepicker();
+  $("#datepicker").datepicker();
 });
+
+function wybranyPokoj() {
+  return console.log($("#pokoj :selected").text());
+}
+
+function wybraniGoscie() {
+  return console.log($("#goscie :selected").text());
+}
