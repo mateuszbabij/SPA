@@ -30,7 +30,7 @@ const cards = function (data) {
                           <br>
                         <button id="btn_${[
                           i,
-                        ]}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                        ]}" type="button" class="btn btn-primary addToCart" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
         Zarezerwuj
       </button>
                 </div>
