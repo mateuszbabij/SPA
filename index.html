@@ -19,7 +19,7 @@
         <a class="navbar-brand fa-solid fa-spa" href="#home"></a>
         <a class="navbar-brand" href="#home"> CZUŁY ROMAN</a>
         <button
-        id="navbarButton"
+          id="navbarButton"
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -43,9 +43,14 @@
                 <a href="#galeria" class="nav-link">Kontakt</a>
               </li>
               <li class="nav-item">
-                <a href="#koszyk" class="nav-link">Koszyk</a>
-              </li>
-                </ul>
+                <a
+                  href="#koszyk"
+                  class="nav-link"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  >Koszyk</a
+                >
               </li>
             </ul>
           </div>
@@ -69,21 +74,90 @@
     <section
       href="#oferta"
       id="oferta"
-      class="container-fluid position-absolute">
-
+      class="container-fluid position-absolute"
+    >
       <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 m-0">
-          
-        <!-- HTML from JS will be here -->
+        <div
+          class="row insertCard row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 m-0"
+        >
+          <!-- HTML from JS will be here -->
         </div>
       </div>
     </section>
-    <section class="container-fluid">
+    <!-- <section class="container-fluid"> -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Koszyk</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        Twoje usługi:
+        <div class="container border border-success rounded-3">
+          <div class="row">
+            <div class=" col-4 my-auto">
+              <img
+                src="./images/treatement1.jpg"
+                class="img-thumbnail"
+                alt="..."
+              />
+            </div>
+            <div class="col-8">
+              <div class="row py-2">
+                <h4>
+                  Masaż rozgrzanym monitorem
+                </h4>
+              </div>
+              <div class="mb-3 row">
+                <label for="qty" class="col-2 col-form-label pe-0"
+                  >Ilość:</label
+                >
+                <div class="col-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="qty"
+                    value="1"
+                  />
+                </div>
+              </div>
+              <div class="row pb-3">
+                <div class="col-md-6 py-2">
+                  <div class="input-group date" id="datepicker">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-append">
+                      <span class="input-group-text bg-white d-block">
+                        <i class="fa fa-calendar"></i>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 py-2">
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-remove float-end m-0"
+                  >
+                    Usuń
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-      
-      <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -107,11 +181,10 @@
             </div>
           </div>
         </div>
-      </div>     
-          </section>
+      </div>      -->
+    <!-- </section> -->
 
     <script src="scripts/script.js"></script>
     <script src="scripts/cart.js"></script>
   </body>
 </html>
-
