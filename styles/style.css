@@ -68,7 +68,18 @@ body {
   margin-right: 1rem;
 }
 
+.offcanvas-end{
+  width: 40rem;
+}
 
+h5{
+  margin: auto;
+}
+
+.btn-remove{
+  width: 5rem;
+  margin-right: 1rem;
+}
 
 /* Background for dropdown menu for smaller screens */
 @media only screen and (max-width:576px){

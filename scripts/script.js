@@ -7,7 +7,7 @@ $("#navbarButton").on("click", function () {
 //wstawianie zabiegu do html
 const cards = function (data) {
   for (let i = 0; i < data.length; i++) {
-    $(".row").append(
+    $(".insertCard").append(
       `<div class="col">
         <div class="card h-100" >
                 <img src="images/${
@@ -109,8 +109,8 @@ const database1 = fetch("database.json")
 const database2 = fetch("database.json")
   .then((result) => result.json())
   .then(function (data) {
-    rooms();
-    roomsguest(data.rooms);
+    // rooms();
+    // roomsguest(data.rooms);
   })
   .catch((err) => console.warn(err));
 //koniec pobierania
@@ -125,8 +125,7 @@ $(document).one("change", "#gosc", function () {
   fetch("database.json")
     .then((result) => result.json())
     .then(function (data) {
-      console.log(data.rooms);
-      roomsid(data.rooms);
+      // roomsid(data.rooms); dodawanie pokoi do modala, wyłączone
     })
     .catch((err) => console.warn(err));
 });
